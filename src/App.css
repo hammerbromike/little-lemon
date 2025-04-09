@@ -1,38 +1,710 @@
-.App {
-  text-align: center;
+/* GLOBAL */
+body {
+  background-color: #FFFFFF;
+  font-family: Karla, serif;
+  margin: 0;
+  padding: 0;
+}
+h1, h2, h3 {
+  font-family: "Markazi Text";
+}
+h1 {
+  font-size: 64pt;
+  margin: 0;
+  padding: 0;
+}
+h2 {
+  font-size: 40pt;
+  margin: -20px 0 0 0;
+  padding: 0;
+  font-weight: 100;
+}
+p {
+  font-size: 15pt;
+}
+a {
+  text-decoration: none;
+}
+nav ul li a, .description h4 a {
+  color: #000000;
+}
+nav ul li a:hover, .description h4 a:hover, footer a:hover {
+  color: #EE9972;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ---------- NAVIGATION ---------- */
+nav {
+  background-color: #FFFFFF;
+  position: fixed;
+  overflow: hidden;
+  z-index: 115;
+  width: 100%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav .menuicon {
+  display: none;
+  cursor: pointer;
+}
+nav .hamburger {
+  width: 30px;
+  height: 5px;
+  background-color: #495E57;
+  margin: 5px 0;
+  border-radius: 10px;
+}
+nav img {
+  padding: 20px;
+}
+nav ul.navlinks {
+  list-style: none;
+  display: flex;
+}
+nav ul.navlinks.visible {
+  flex-direction: column;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 100%;
+  background-color: #495E57;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  transition: all 0.3s ease-in-out;
+}
+nav ul li a {
+  padding: 17px 20px;
 }
 
-.App-link {
-  color: #61dafb;
+/* ---------- MAIN ---------- */
+main {
+  padding-top: 84px;
+}
+#hero, footer {
+  background-color: #495E57;
+}
+#testimonials {
+  background-color: #FBDABB;
+}
+.specials-card, #booking, #confirmed {
+  background-color: #EDEFEE;
+}
+#specials, #testimonials, #about {
+  height: 100vh;
+}
+.specials-heading, .container, #about {
+  margin: 0 auto;
+  width: 70%;
+}
+#specials, #testimonials {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+}
+#about {
+  display: flex;
+  flex-direction: row;
+  place-items: center;
+}
+section img {
+  border-radius: 20px;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+#testimonials h1, #booking h1, #confirmed h1 {
+  text-align: center;
+}
+a.button {
+  background-color: #F4CE14;
+  color: #000000;
+  font-weight: bold;
+  padding: 10px 30px;
+  border-radius: 16px;
+  height: fit-content;
+}
+a:hover.button {
+  background-color: #EE9972;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* ---------- HERO ---------- */
+#hero .container {
+  place-items: center;
+}
+.hero-left {
+  color: #EDEFEE;
+  margin-right: 10%;
+}
+.hero-left h1 {
+  color: #F4CE14;
+}
+.hero-left p {
+  width: 80%;
+}
+.hero-left a.button {
+  display: block;
+  width: fit-content;
+}
+.hero-right {
+  margin-bottom: -100px;
+}
+.hero-right img {
+  width: 30vw;
+  height: 52vh;
+  margin-top: 50px;
+  border-radius: 20px;
+  object-fit: cover;
+  object-position: 100% 40%;
+}
+
+/* ---------- SPECIALS ---------- */
+.specials-heading {
+  display: flex;
+  justify-content: space-between;
+}
+#specials h1, #testimonials h1  {
+  padding: 2rem 0;
+}
+.specials-heading a.button {
+  align-self: center;
+  display: block;
+  width: fit-content;
+}
+.specials-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 20px;
+  width: 30%;
+}
+.specials-card img {
+  border-radius: 20px 20px 0 0;
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  object-position: 100% 55%;
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  height: 100%;
+  justify-content: space-between;
+}
+.description > p {
+  color: #495E57;
+  flex-grow: 1;
+}
+.name-price {
+  font-family: "Markazi Text";
+  font-size: 20pt;
+}
+.name-price h3 {
+  margin: 0;
+}
+.name-price span {
+  color: #EE9972;
+}
+.name-price, .delivery-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.delivery-icon img {
+  width: 20px;
+  height: 20px;
+  border-radius: 0;
+}
+
+/* ---------- TESTIMONIALS ---------- */
+#testimonials .rating-card {
+  background-color: #EDEFEE;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  width: 20%;
+  border-radius: 20px;
+}
+#testimonials .rating-card img {
+  width: 100%;
+  height: auto;
+}
+#testimonials .rating-card h4 {
+  font-size: 18pt;
+  text-align: center;
+}
+#testimonials .rating-card .rating {
+  text-align: center;
+}
+#testimonials .rating-card .rating img {
+  width: 15%;
+  height: auto;
+  border-radius: 0;
+}
+
+/* ---------- ABOUT ---------- */
+#about .left {
+  width: 39%;
+  margin-right: 3%;
+}
+#about .right {
+  margin-top: -700px;
+  display: flex;
+  width: 60%;
+  text-align: right;
+}
+#about .right img {
+  width: 23vw;
+  height: 60vh;
+  object-fit: cover;
+}
+#about .right img:first-of-type {
+  position: absolute;
+  margin-left: 0px;
+  margin-top: 150px;
+  object-position: 95% 100%;
+}
+#about .right img:last-of-type {
+  position: absolute;
+  margin-left: 17.77vw;
+  object-position: 85% 100%;
+}
+
+/* ---------- RESERVE / CONFIRMED ---------- */
+#booking .container, #confirmed .container {
+  flex-direction: column;
+  padding: 40px 0;
+}
+#booking .form {
+  display: flex;
+  flex-direction: column;
+  width: 40vh;
+  margin: 40px auto;
+}
+#confirmed .form {
+  width: 70%;
+  text-align: center;
+  margin: 80px auto;
+}
+#booking label {
+  margin-bottom: 4px;
+}
+#booking input, #booking select, #booking textarea {
+  background-color: #FFFFFF;
+  border: 1px solid #333333;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+#booking input.button {
+  background-color: #F4CE14;
+  font-family: Karla;
+  font-size: 13pt;
+  font-weight: bold;
+  margin: 30px auto 10px auto;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 16px;
+  width: auto;
+  height: fit-content;
+}
+#booking input:hover.button {
+  background-color: #EE9972;
+  cursor: pointer;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  color: #EDEFEE;
+  padding: 5rem 0;
+}
+footer .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 70%;
+}
+footer .f-list, .f-social {
+  align-self: flex-start;
+}
+footer ul.f-social {
+  display: flex;
+  flex-direction: row;
+}
+footer img {
+  width: 153px;
+  height: 240px;
+  border-radius: 0;
+}
+footer h4 {
+  margin-top: 20px;
+  font-size: 20pt;
+}
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+footer li {
+  padding: 2px 0;
+}
+footer a {
+  color: #FFFFFF;
+}
+.copyright {
+  margin-top: 20px;
+  text-align: center;
+}
+.social {
+  fill: #FFFFFF;
+}
+.social:hover {
+  fill: #EE9972;
+}
+
+/* ---------- RESPONSIVE (TABLET - HORIZONTAL) ---------- */
+@media (max-width: 1080px) {
+  /* ---------- GLOBAL ---------- */
+  h1 {
+    font-size: 60pt;
   }
-  to {
-    transform: rotate(360deg);
+  h2 {
+    font-size: 36pt;
+  }
+
+  /* ---------- NAVIGATION ---------- */
+  nav .navbar {
+    width: 90%;
+  }
+  nav ul li a {
+    padding: 17px 12px;
+  }
+
+  /* ---------- MAIN ---------- */
+  #hero .container,
+  .specials-heading,
+  #specials .container,
+  #testimonials .container,
+  #about,
+  footer .container,
+  #booking .container,
+  #confirmed .container
+  {
+    width: 90%;
+  }
+  #specials, #testimonials, #about {
+    height: auto;
+    padding: 100px 0;
+  }
+
+  /* ---------- HERO ----------- */
+  .hero-left {
+    margin-right: 0%;
+  }
+  .hero-right img {
+    width: 40vw;
+  }
+
+  /* ---------- SPECIALS ---------- */
+  .specials-card img {
+    max-height: 140px;
+  }
+  .specials-heading h1 {
+    font-size: 52pt;
+  }
+  .name-price {
+    font-size: 15pt;
+  }
+
+  /* ---------- TESTIMONIALS ---------- */
+  #testimonials h1 {
+    padding-top: 0;
+  }
+  #testimonials .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #testimonials .rating-card {
+    flex-direction: row;
+    padding: 20px;
+    width: 42%;
+    margin-bottom: 40px;
+  }
+  #testimonials .rating-card img {
+    width: 160px;
+    height: 160px;
+  }
+  #testimonials .rating-card .name-rating {
+    padding-left: 20px;
+    width: 100%;
+    align-self: center;
+  }
+  #testimonials .rating-card .name-rating h4 {
+    font-size: 16pt;
+    margin-top: 0;
+  }
+  #testimonials .rating-card .name-rating .rating {
+    text-align: center;
+  }
+  #testimonials .rating-card .name-rating .rating img {
+    width: 20px;
+    height: auto;
+  }
+
+  /* ---------- ABOUT ---------- */
+  #about {
+    display: block;
+    width: 90%;
+  }
+  #about .left {
+      width: auto;
+  }
+  #about .right {
+      display: flex;
+      width: 100%;
+      height: 630px;
+      margin-top: 0;
+      padding: 40px 0;
+  }
+  #about .right img {
+      width: 50%;
+      height: 60vh;
+      object-fit: cover;
+  }
+  #about .right img:first-of-type {
+      position: absolute;
+      margin-left: 0px;
+      margin-top: 0px;
+      object-position: 100% 100%;
+  }
+  #about .right img:last-of-type {
+      position: absolute;
+      margin-top: 150px;
+      margin-left: 40vw;
+      object-position: 100% 100%;
+  }
+
+  /* ---------- BOOKING / CONFIRMED ---------- */
+  #booking h1, #confirmed h1 {
+    margin: 40px 0;
+  }
+  #confirmed p {
+    padding-bottom: 60px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .f-list {
+    flex-direction: row;
+    padding: 20px;
+    width: 27%;
+  }
+  .f-list:last-of-type {
+    text-align: center;
+    margin: 0 auto;
+  }
+  .f-social {
+    justify-content: center;
+  }
+}
+
+/* ---------- RESPONSOVE (TABLET - VERTICAL) ---------- */
+@media (max-width: 810px) {
+  /* ---------- TESTIMONIALS ---------- */
+  #testimonials .rating-card img {
+    width: 120px;
+    height: 120px;
+}
+
+  /* ---------- ABOUT ---------- */
+  #about .right {
+    height: 542px;
+  }
+  #about .right img {
+      height: 40vh;
+  }
+}
+
+/* ---------- RESPONSIVE (MOBILE) ---------- */
+@media (max-width: 428px) {
+  /* ---------- GLOBAL ---------- */
+  h1 {
+      font-size: 52pt;
+  }
+
+  /* ---------- NAVIGATION ---------- */
+  nav .navbar {
+    width: 100%;
+    padding: 10px 0;
+  }
+  nav .navbar a {
+    margin: 0 auto;
+  }
+  nav .menuicon {
+    position: absolute;
+    display: block;
+    margin-left: 5vw;
+  }
+  nav .hamburger {
+    background-color: #495E57;
+  }
+  nav img {
+    padding: 0;
+  }
+  nav ul.navlinks {
+    display: none;
+  }
+  nav ul.navlinks.visible {
+    position: fixed;
+    display: flex;
+    background: #333333;
+    z-index: 116;
+    padding: 20px 0;
+    margin-top: 24px;
+  }
+  nav ul li {
+    padding: 20px;
+    font-size: 14pt;
+    width: inherit;
+    text-align: center;
+  }
+  nav ul li a {
+    color: #FFFFFF;
+  }
+  nav ul li a:hover {
+    color: #EE9972;
+  }
+
+  /* ---------- MAIN ---------- */
+  main {
+    padding-top: 50px;
+  }
+
+  /* ---------- HERO ---------- */
+  #hero {
+    display: block;
+  }
+  #hero .container {
+    display: block;
+    padding-top: 50px;
+  }
+  .hero-left p {
+    width: 100%;
+  }
+  .hero-left a.button {
+    display: block;
+    width: fit-content;
+    margin: 40px auto 0 auto;
+  }
+  .hero-right img {
+      width: 100%;
+      height: 400px;
+      margin-bottom: -100px;
+  }
+
+  /* ---------- SPECIALS ---------- */
+  .specials-card img {
+    max-height: 200px;
+  }
+  .specials-heading {
+    display: block;
+    margin-top: 120px;
+    text-align: center;
+  }
+  .specials-heading h1  {
+    font-size: 50px;
+  }
+  .specials-heading a.button {
+    margin: 0 auto 50px auto;
+  }
+  #specials .container {
+    flex-direction: column;
+  }
+  .specials-card {
+    width: auto;
+    margin-bottom: 40px;
+  }
+  .specials-card:last-of-type {
+    margin-bottom: 0;
+  }
+  .name-price {
+    font-size: 22pt;
+  }
+  .delivery-icon h4 {
+    font-size: 16pt;
+  }
+  .delivery-icon img {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* ---------- TESTIMONIALS ---------- */
+  #testimonials .container {
+    flex-direction: column;
+  }
+  #testimonials .rating-card {
+    width: auto;
+  }
+  #testimonials .rating-card img {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* ---------- ABOUT ---------- */
+  #about .right {
+    height: 400px;
+  }
+  #about .right img {
+    width: 60%;
+    height: 30vh;
+    object-fit: cover;
+  }
+  #about .right img:first-of-type {
+    object-position: 100% 50%;
+  }
+  #about .right img:last-of-type {
+    margin-left: 30vw;
+    object-position: 90% 100%;
+  }
+
+  /* ---------- BOOKING / CONFIRMED ---------- */
+  #booking h1, #confirmed h1 {
+    font-size: 40pt;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+      text-align: center;
+  }
+  footer .container {
+      display: block;
+  }
+  .f-list {
+    flex-direction: column;
+    width: 90%;
+  }
+  footer h4 {
+      margin: 40px 0 10px 0;
+      padding: 0;
+  }
+  .f-list:last-child ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+  }
+  .copyright {
+      margin-top: 60px;
   }
 }
